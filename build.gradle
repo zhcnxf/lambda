@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.2.1'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'me.tatarka.retrolambda'
+
+mainClassName = 'Main'
+
+sourceCompatibility = 1.8
+
+retrolambda {
+    javaVersion JavaVersion.VERSION_1_6
+    defaultMethods false
+    incremental true
+}
+
+repositories {
+    mavenCentral()
+}
